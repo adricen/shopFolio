@@ -3,12 +3,14 @@ const { data: navigation } = await useAsyncData('navigation', () => fetchContent
 </script>
 
 <template>
-    <header>
-        <ul>
-            <li v-for="item in navigation" :key="item.id">
+    <header class="mb-5">
+        <ul class="inline-block">
+            <li class="block" v-for="item, index in navigation" :key="item.id">
                 <nuxt-link :to="item._path">{{ `${item.icon ?? ''} ${item.title}` }}</nuxt-link>
+                <!-- <span v-if="index !== navigation.length -1"> | </span> -->
             </li>
         </ul>
-        <pre>{{ navigation }}</pre>
+        <main-logo />
+        <!-- <pre>{{ navigation }}</pre> -->
     </header>
 </template>

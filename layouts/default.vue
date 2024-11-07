@@ -9,19 +9,20 @@
 
     useHead({
         bodyAttrs: {
-            class: 'relative h-screen w-screen bg-slate-700 p-20',
+            class: 'relative h-screen w-screen bg-slate-700 p-10',
         },
     });
 </script>
 
 <template>
     <div
-        class="absolute w-fit h-fit m-auto inset-0 rounded-xl overflow-hidden" 
-        >
+        class="absolute m-5 inset-0 rounded-xl overflow-hidden" 
+    >
         <!-- :class="`w-[${width}px]`" -->
         <div class=" absolute w-full h-full bg-slate-200 overflow-scroll no-scrollbar">
-            Here is whate it takes to make a layout
-            <slot />
+            <div class="p-5">
+                <slot />
+            </div>
         </div>
     </div>
 </template>
