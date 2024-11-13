@@ -1,20 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-10-07',
   devtools: { enabled: true },
+  experimental: {
+    watcher: "chokidar",
+  },
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss'
   ],
-
   routeRules: {
     '/': { prerender: true }
   },
-
-  compatibilityDate: '2024-10-07',
-  experimental: {
-    watcher: "chokidar",
+  typescript: {
+    typeCheck: true
   },
-  
   vite: {
     server: {
       watch: {
